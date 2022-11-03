@@ -9,7 +9,9 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "bootstrap": "^5.2.2",
     "daisyui": "^2.36.1",
+    "startbootstrap-sb-admin": "^7.0.5",
     "vue": "^3.2.41",
     "vue-router": "4"
   },

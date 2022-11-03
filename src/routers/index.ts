@@ -1,11 +1,20 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
-import HomeComponent from "../views/Home.vue";
+import DashboardLayout from '../layouts/Dashboard.vue'
+import HomeView from '../views/Home.vue'
+import LoginView from '../views/Login.vue';
 
 const routes: Array<RouteRecordRaw> = [
   {
     path: "/",
-    name: "home",
-    component: HomeComponent,
+    name: "dashboard",
+    component: DashboardLayout,
+    children: [
+      {
+        path: '',
+        name: 'home',
+        component: HomeView,
+      }
+    ]
   },
   {
     path: "/about",
@@ -16,6 +25,11 @@ const routes: Array<RouteRecordRaw> = [
     component: () =>
       import(/* webpackChunkName: "about" */ "../views/About.vue"),
   },
+  {
+    path: '/login',
+    name: 'login',
+    component: LoginView
+  }
 ];
 
 const router = createRouter({
